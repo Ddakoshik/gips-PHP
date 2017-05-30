@@ -1,0 +1,36 @@
+@media only screen and (max-width:425px){body{padding-top:0px;}
+.form-horizontal div, .row-fluid .col-xs-12{padding:0;}
+footer div{padding:0;}
+.form-horizontal h4{font-size:11px;}
+.phon-left a h4{margin-left:15px;font-size:13px;text-align:left;}
+.text2{font-size:13px;}
+.btn-large{height:35px;width:100px;margin:0 auto;}
+footer h4{font-size:13px}
+.partners-text h1, .partners-text h3{font-size:24px;}
+.o-nas-text h1{font-size:23px;}
+.partners-text li{font-size:14px;}
+.cssload-loader {width: 100%;}
+}
+@media only screen and (min-width:426px) and (max-width:767px){body{padding-top:0px;}
+.form-horizontal div, .row-fluid .col-xs-12{padding:0;}
+.phon-left a h4{margin-left:15px;font-size:19px;text-align:left;}
+.text2{font-size:21px;}
+.btn-large{height:50px;width:160px;margin:0 auto;}
+
+}
+@media only screen and (min-width:768px) and (max-width:991px){.phon-left a h4{margin-left:50px;font-size:1.2em;text-align:left;}
+.text2{margin-top:7px;font-size:11px;}
+.center{margin-left:20px;}
+.btn-large{height:30px;width:90px;margin:0 auto;}
+.btn{font-size: 12px;}
+}
+@media only screen and (min-width:992px) and (max-width:1199px){.phon-left a h4{margin-left:40px;font-size:1.2em;text-align:left;}
+.text2{margin-top:15px;font-size:13px;}
+.center{margin-left:30px;}
+.btn-large{height:30px;width:100px;margin:0 auto;}
+}
+@media only screen and (min-width:1200px){.phon-left a h4{margin-left:60px;font-size:1.2em;text-align:left;}
+.text2{margin-top:15px;font-size:18px;}
+.center{margin-left:30px;}
+.btn-large{height:40px;width:120px;margin:0 auto;}
+}
