@@ -89,7 +89,7 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-    <script src="js/zum.js"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

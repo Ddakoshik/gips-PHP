@@ -5,49 +5,7 @@
 
 ?>
 
-<!-- <?php
-  //Если форма отправлена
-  if(isset($_POST['submit'])) {
- //Проверка Поля ИМЯ
-  if(trim($_POST['contactname']) == '') {
-  $hasError = true;
-  } else {
-  $name = trim($_POST['contactname']);
-  }
- //Проверка поля ТЕМА
-  if(trim($_POST['subject']) == '') {
-  $hasError = true;
-  } else {
-  $subject = trim($_POST['subject']);
-  }
- //Проверка правильности ввода EMAIL
-  if(trim($_POST['email']) == '')  {
-  $hasError = true;
-  } else if (!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim($_POST['email']))) {
-  $hasError = true;
-  } else {
-  $email = trim($_POST['email']);
-  }
- //Проверка наличия ТЕКСТА сообщения
-  if(trim($_POST['message']) == '') {
-  $hasError = true;
-  } else {
-  if(function_exists('stripslashes')) {
-  $comments = stripslashes(trim($_POST['message']));
-  } else {
-  $comments = trim($_POST['message']);
-  }
-  }
- //Если ошибок нет, отправить email
-  if(!isset($hasError)) {
-  $emailTo = 'name@yourdomain.com'; //Сюда введите Ваш email
-  $body = "Name: $name \n\nEmail: $email \n\nSubject: $subject \n\nComments:\n $comments";
-  $headers = 'From: My Site <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
- mail($emailTo, $subject, $body, $headers);
-  $emailSent = true;
-  }
-  }
-  ?> -->
+
 
 <script src="jquery.min.js" type="text/javascript"></script>
       <script src="jquery.validate.pack.js" type="text/javascript"></script>
@@ -119,7 +77,8 @@
                                 <img data-toggle="magnify" src="img/<?=$product['img2']?>" alt="" class="img-responsive mag "  height="300">
                                 </div>
                                 <h4 class="text2 text-transf"><?=$product['name']?></h4>  
-                                <p class="text2">Цена: <?=$product['price']?>грн/шт <br> </p>   
+                                <p class="text2">Цена: <?=$product['price']?>грн/шт  </p>
+                                <p class="text2"><?=$product['description']?> </p>   
                             </div>
                         </div>         
                     </div>
@@ -130,12 +89,14 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <img src="img/<?=$product['img1']?>" alt="" class="img-responsive"  height="300">   
                            
-<!-- <?
+ <!--<?
 if (isset ($_POST['messageFF'])) {
-  mail ("roobotik@gmail.com",
-        "заполнена контактная форма с ".$_SERVER['HTTP_REFERER'],
-        "Имя: ".$_POST['nameFF']."\nEmail: ".$_POST['contactFF']."\nСообщение: ".$_POST['messageFF']);
-  echo ('<p style="color: green">Ваше сообщение получено, спасибо!</p>');
+   $msg = "Имя: ".$_POST['nameFF']."\nEmail: ".$_POST['contactFF']."\nСообщение: ".$_POST['messageFF'];
+  mail ("roobotik@gmail.com", "заполнена контактная форма с ".$_SERVER['HTTP_REFERER'], $msg, "From: roobotik@artgips\r\n" );
+  if(isset($_POST['contactFF'])){
+        echo ('<p style="color: green">Ваше сообщение получено, спасибо!</p>');
+  }
+  
 }
 ?>
 
@@ -147,58 +108,50 @@ if (isset ($_POST['messageFF'])) {
 <p>Ваше сообщение:</p>
 <textarea name="messageFF" required rows="5"></textarea>
 <input type="submit" value="отправить">
-</form>
- -->
+</form>-->
+ 
 
 
 <?php
+
+
+    // error_reporting(E_ALL);
+    // ini_set('display_errors', '1');
+    // if (mail("roobotik@gmail.com", "Test mail", "Проверка отправки почты")) {
+    //       echo "ok";
+    // } else {
+    //        echo "error";}
+
+if (isset ($_POST['buttonmail'])){
 $msg = 'Имя: '.$_POST['name']."\r\n E-mail: ".$_POST['mail']."\r\n Телефон: ".$_POST['phone']."\r\n Сообщение: ".$_POST['message'];
-mail("roobottik@gmail.com", "Новое сообщение !!", $msg, "From: roobotik@artgips\r\n");
-echo '<p style="color: green">Сообщение отправлено!</p>';
+mail("roobotik@gmail.com", "Заказ" .$product['name'] .$_SERVER['HTTP_REFERER'], $msg, "From: roobotik@artgips\r\n");
+
+echo ('<p style="color: green">Сообщение отправлено!</p>');
+
+}
+
 ?>
-<form method=POST class="form_s center-block">
+                <form method=POST class="form_s center-block">
                   <div class="form-group">
-                    <input type="text" class="form-control" required="required" placeholder="Имя" name="name">
+                    <input type="text" class="form-control"  placeholder="Имя" name="name">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" required="required" placeholder="e-mail" name="mail">
+                    <input type="text" class="form-control"  placeholder="e-mail" name="mail" >
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control" required="required" placeholder="телефон" name="phone">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" required="required" placeholder="сообщение" name="message">
+                    <textarea class="form-control" rows="4"  placeholder="сообщение" name="message" ></textarea>
+                    <!--<input type="text" class="form-control" required="required" placeholder="сообщение" name="message">-->
                   </div>
-                  <button type="submit" class="btn btn-warning btn-block">ОТПРАВИТЬ</button>
+                  <button type="submit" class="btn btn-warning btn-block" name="buttonmail" >ОТПРАВИТЬ</button>
                 </form>
 
 
 
 
 
-
-     <!--  <div id="contact-wrapper">
-  <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="contactform">
-  <div>
-  <label for="name"><strong>Имя:</strong></label>
-  <input type="text" size="50" name="contactname" id="contactname" value="" />
-  </div>
- <div>
-  <label for="email"><strong>Email:</strong></label>
-  <input type="text" size="50" name="email" id="email" value="" class="required email"/>
-  </div>
- <div>
-  <label for="subject"><strong>Телефон:</strong></label>
-  <input type="text" size="50" name="subject" id="subject" value="" class="required" />
-  </div>
- <div>
-  <label for="message"><strong>Сообщение:</strong></label>
-  <textarea rows="5" cols="50" name="message" id="message"></textarea>
-  </div>
-
-  <input type="submit" value="Send Message" name="submit" />
-  </form>
-  </div> -->
 
 
                                  
