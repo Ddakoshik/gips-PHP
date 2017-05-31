@@ -92,7 +92,7 @@
  <!--<?
 if (isset ($_POST['messageFF'])) {
    $msg = "Имя: ".$_POST['nameFF']."\nEmail: ".$_POST['contactFF']."\nСообщение: ".$_POST['messageFF'];
-  mail ("roobotik@gmail.com", "заполнена контактная форма с ".$_SERVER['HTTP_REFERER'], $msg, "From: roobotik@artgips\r\n" );
+  mail ("artgipsok@gmail.com", "заполнена контактная форма с ".$_SERVER['HTTP_REFERER'], $msg, "From: roobotik@artgips\r\n" );
   if(isset($_POST['contactFF'])){
         echo ('<p style="color: green">Ваше сообщение получено, спасибо!</p>');
   }
@@ -124,7 +124,7 @@ if (isset ($_POST['messageFF'])) {
 
 if (isset ($_POST['buttonmail'])){
 $msg = 'Имя: '.$_POST['name']."\r\n E-mail: ".$_POST['mail']."\r\n Телефон: ".$_POST['phone']."\r\n Сообщение: ".$_POST['message'];
-mail("roobotik@gmail.com", "Заказ" .$product['name'] .$_SERVER['HTTP_REFERER'], $msg, "From: roobotik@artgips\r\n");
+mail("artgipsok@gmail.com", "Заказ" .$product['name'] .$_SERVER['HTTP_REFERER'], $msg, "From: roobotik@artgips\r\n");
 
 echo ('<p style="color: green">Сообщение отправлено!</p>');
 

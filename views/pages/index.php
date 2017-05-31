@@ -63,8 +63,8 @@
                                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                                 <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                                <!--<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="5"></li>-->
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
@@ -91,7 +91,7 @@
                                         <h3>3D панели из гипса</h3>
                                     </div>
                                 </div>
-                                <div class="item">
+                                <!--<div class="item">
                                     <img class="slide-image" src="img/slaid5.jpg" alt="" >
                                     <div class="carousel-caption">
                                         <h3>3D панели из гипса</h3>
@@ -102,7 +102,7 @@
                                     <div class="carousel-caption">
                                         <h3>3D панели из гипса</h3>
                                     </div>
-                                </div>
+                                </div>-->
                                 
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -145,21 +145,21 @@
     <?
 $products = get_products();
 foreach($products as $item):?>
-<div  style="height: 405px" class="col-lg-4 col-md-4 col-sm-4 "   >
+<div   class="col-lg-4 col-md-4 col-sm-4 "   >
             <div class="thumbnail">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <a href="testindex.php?view=product&id=<?=$item['id']?>"><img src="img/<?=$item['img1']?>" alt="" class="img-responsive"  height="200"> </a>   
+                        <a href="index.php?view=product&id=<?=$item['id']?>"><img src="img/<?=$item['img1']?>" alt="" class="img-responsive"  height="200"> </a>   
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                         <div class="row ">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
-                                <a href="testindex.php?view=product&id=<?=$item['id']?>"><h4 class="text2 text-transf"><?=$item['name']?></h4> </a> 
+                                <a href="index.php?view=product&id=<?=$item['id']?>"><h4 class="text2 text-transf"><?=$item['name']?></h4> </a> 
                                 <p class="text2">Цена: <?=$item['price']?>грн/шт <br> </p>
 <!-- Начало кнопки -->
-                                <div class="center"><button data-toggle="modal" data-target="#betaModal" class="btn btn-warning center-block btn-large">Посмотреть</button></div>
+                                <a href="index.php?view=product&id=<?=$item['id']?>"><div class="center"><button data-toggle="modal" data-target="#betaModal" class="btn btn-warning center-block btn-large">Посмотреть</button></div></a>
                                 <!-- Всплывающяя форма заказать -->
                                 <div class="modal  fade " id="betaModal"  tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
